@@ -15,7 +15,7 @@ require("head.php");
                 <h3>100 DIAMONDS</h3>
                 <form action="" method="get">
                     <button type="submit" class="buy">
-                        BUY <i class="fa-solid fa-cart-shopping-fast"></i>
+                        <a href="signup.php">BUY</a> <i class="fa-solid fa-cart-shopping-fast"></i>
                     </button>
                 </form>
             </div>
@@ -24,7 +24,7 @@ require("head.php");
                 <h3>210 DIAMONDS</h3>
                 <form action="" method="get">
                     <button type="submit" class="buy">
-                        BUY <i class="fa-solid fa-cart-shopping-fast"></i>
+                        <a href="signup.php">BUY</a> <i class="fa-solid fa-cart-shopping-fast"></i>
                     </button>
                 </form>
             </div>
@@ -33,7 +33,7 @@ require("head.php");
                 <h3>530 DIAMONDS</h3>
                 <form action="" method="get">
                     <button type="submit" class="buy">
-                        BUY <i class="fa-solid fa-cart-shopping-fast"></i>
+                        <a href="signup.php">BUY</a> <i class="fa-solid fa-cart-shopping-fast"></i>
                     </button>
                 </form>
             </div>
@@ -42,7 +42,7 @@ require("head.php");
                 <h3>1080 DIAMONDS</h3>
                 <form action="" method="get">
                     <button type="submit" class="buy">
-                        BUY <i class="fa-solid fa-cart-shopping-fast"></i>
+                        <a href="signup.php">BUY</a> <i class="fa-solid fa-cart-shopping-fast"></i>
                     </button>
                 </form>
             </div>
@@ -51,7 +51,7 @@ require("head.php");
                 <h3>2200 DIAMONDS</h3>
                 <form action="" method="get">
                     <button type="submit" class="buy">
-                        BUY <i class="fa-solid fa-cart-shopping-fast"></i>
+                        <a href="signup.php">BUY</a> <i class="fa-solid fa-cart-shopping-fast"></i>
                     </button>
                 </form>
             </div>
