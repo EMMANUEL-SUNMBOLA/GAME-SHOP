@@ -5,9 +5,11 @@
 <li>To help gamers buy in game assets with ease</li>
 <li>Because we can 🙂</li>
 </ol>
-<ol>
+<>
 <h1>Updates</h1>
 <li>Changed files to php file type since the backend will be done with php</li>
 <li>Seperated the head and nav to avoid repetition</li>
+<li>Adding info to a database</li>
+<li>Adding functions to be used in thw future</li>
 <li>More to come....</li>
 </ol>
