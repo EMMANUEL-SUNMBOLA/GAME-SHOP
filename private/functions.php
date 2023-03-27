@@ -60,21 +60,36 @@ function createdbTab($conn,$dbTab){
     return ($conn -> query($msg)) ? true : false;
 }
 
-function insertdbTab($conn, $dbTab, array $info){
-    foreach($info as $cellary){
+function insertdbTab($conn, $dbTab, $uid, $username, $password, $card){
 
-        $msg = "INSERT INTO $dbTab( uid, username, password, card) VALUES('$cellary',)";
+        $msg = "INSERT INTO $dbTab( uid, username, password, card) VALUES('$uid', '$username', '$password', '$card')";
         /**
-         * not sure of the syntax above ,it might work ,if you see this drop your though
+         * not sure of the syntax above ,it might work ,if you see this drop your thoughts
          */
-    }
+    
     return ($conn -> query($msg)) ? true : false;
     /**
      (" .# foreach($info as $cellary){echo'"' . $cellary . '"';}  ')';
      tried to loop through the info cos i'm not sure if i should save card info or not
     */
 }
-// function Uverify($conn, $dbTab, $username){
-//     $msg = "SELECT * FROM $dbTab";
-    
-// }
+
+function Uverify($conn, $dbTab, $uid){
+    // $msg = "SELECT * FROM $dbTab WHERE uid = '$uid'";
+    $msg = "SELECT * FROM $dbTab";
+    // return ($conn -> query($msg) -> fetch_assoc()) ? true : false; 
+    $result = $conn -> query($msg);
+    $data = $result -> fetch_assoc();
+    if($result -> num_rows > 0) {
+       return ($data["uid"] == $uid) ? true : false;       
+    }  
+}
+
+function Pverify($conn, $dbTab, $uid, $password){
+    $msg = "SELECT * FROM $dbTab WHERE uid = '$uid'";
+    $result = $conn -> query($msg) ;
+    $data = $result -> fetch_assoc();
+    if($result -> num_rows > 0){
+        return (password_verify($password,$data["password"])) ? true : false;
+    }
+}
