@@ -1,5 +1,8 @@
 <?php
-
+/**
+ *most functions were written without testing 
+ use at your risk 😁
+ */
 /**
  * Summary of Vusern
  * @param mixed $name
@@ -42,11 +45,7 @@ function Vuid(int $uid){
     $err = [];
     if(!empty($uid)){
         if(strlen($uid) > 4){
-            if(is_int($uid)) {
-                $err[] =  true;
-            }else{
-                $err[] = "uid should only contain numbers";
-            }
+            $err[] = (is_int($uid)) ? true : "uid should only contain numbers";
         }else{
             $err[] = "invalid uid length";
         }
@@ -55,3 +54,27 @@ function Vuid(int $uid){
     }
     return $err;
 }
+
+function createdbTab($conn,$dbTab){
+    $msg = "CREATE TABLE $dbTab( id NOT NULL PRIMARY KEY int() AUTO_INCREMENT, uid varchar() NOT NULL, username varchar() NOT NULL, password varchar() NOT NULL, card varchar() NOT NULL";
+    return ($conn -> query($msg)) ? true : false;
+}
+
+function insertdbTab($conn, $dbTab, array $info){
+    foreach($info as $cellary){
+
+        $msg = "INSERT INTO $dbTab( uid, username, password, card) VALUES('$cellary',)";
+        /**
+         * not sure of the syntax above ,it might work ,if you see this drop your though
+         */
+    }
+    return ($conn -> query($msg)) ? true : false;
+    /**
+     (" .# foreach($info as $cellary){echo'"' . $cellary . '"';}  ')';
+     tried to loop through the info cos i'm not sure if i should save card info or not
+    */
+}
+// function Uverify($conn, $dbTab, $username){
+//     $msg = "SELECT * FROM $dbTab";
+    
+// }
