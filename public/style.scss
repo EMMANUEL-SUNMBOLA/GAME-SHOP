@@ -129,7 +129,7 @@ main {
         margin-top: 1%;
       }
     }
-}
+  }
 }
 button {
   width: 75px;
@@ -152,10 +152,10 @@ button {
   margin-top: 10%;
 }
 .form {
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .formcont {
     width: 80%;
     margin: 0 auto;
@@ -164,7 +164,15 @@ button {
     align-items: center;
     justify-content: center;
     form {
-        text-align: center;
+      width: 100%;
+      text-align: center;
+      box-shadow:
+      2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+      12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+      22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+      41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      100px 100px 80px rgba(0, 0, 0, 0.07);
       input[placeholder="USERNAME"] {
         width: 80%;
         text-align: center;
@@ -185,9 +193,17 @@ button {
         color: $blue;
         margin-top: 10px;
       }
+      input[placeholder="CARD"] {
+        width: 80%;
+        text-align: center;
+        height: 40px;
+        color: $blue;
+        margin-top: 10px;
+      }
     }
   }
 }
+
 
 @media (max-width: 907px) {
   nav {

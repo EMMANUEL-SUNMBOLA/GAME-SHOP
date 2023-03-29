@@ -56,13 +56,13 @@ function Vuid(int $uid){
 }
 
 function createdbTab($conn,$dbTab){
-    $msg = "CREATE TABLE $dbTab( id NOT NULL PRIMARY KEY int() AUTO_INCREMENT, uid varchar() NOT NULL, username varchar() NOT NULL, password varchar() NOT NULL, card varchar() NOT NULL";
+    $msg = "CREATE TABLE $dbTab( id NOT NULL PRIMARY KEY int() AUTO_INCREMENT, uid varchar() NOT NULL, username varchar() NOT NULL, email varchar() NOT NULL, password varchar() NOT NULL, card varchar() NOT NULL";
     return ($conn -> query($msg)) ? true : false;
 }
 
-function insertdbTab($conn, $dbTab, $uid, $username, $password, $card){
+function insertdbTab($conn, $dbTab, $uid, $username,$email, $password, $card){
 
-        $msg = "INSERT INTO $dbTab( uid, username, password, card) VALUES('$uid', '$username', '$password', '$card')";
+        $msg = "INSERT INTO $dbTab( uid, username, email, password, card) VALUES('$uid', '$username', '$email', '$password', '$card')";
         /**
          * not sure of the syntax above ,it might work ,if you see this drop your thoughts
          */
