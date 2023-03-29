@@ -10,6 +10,7 @@
 <li>Changed files to php file type since the backend will be done with php</li>
 <li>Seperated the head and nav to avoid repetition</li>
 <li>Adding info to a database</li>
+<li>Collecting email so as to send confirmatory code</li>
 <li>Adding functions to be used in thw future</li>
 <li>More to come....</li>
 </ol>

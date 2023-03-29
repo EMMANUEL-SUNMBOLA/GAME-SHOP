@@ -3,57 +3,48 @@
  *most functions were written without testing 
  use at your risk 😁
  */
-/**
- * Summary of Vusern
- * @param mixed $name
- * @return array 
- * validates the username by checking it's length,and checking for some special characters
- */
-function Vusern($name)
-{
-    $name = strip_tags($name);
-    $bad = ['~', '`', '!', '@', '#', '$', '%', '*', '(', ')', '-'];
-    $err = [];
-    if (!empty($name)) {
-        if (strlen($name) >= 6) {
-            foreach ($bad as $cellary) {
-                if (!str_contains($cellary, $name)) {
-                    $err[] = true;
-                } else {
-                    $err['name'] = "name mustn't contain special characters";
 
-                }
-            }
-        } else {
-            $err['name'] = "name too short";
+// function Vusern($name)
+// {
+//     $name = strip_tags($name);
+//     $bad = ['~', '`', '!', '@', '#', '$', '%', '*', '(', ')', '-'];
+//     $err = [];
+//     if (!empty($name)) {
+//         if (strlen($name) >= 6) {
+//             foreach ($bad as $cellary) {
+//                 if (!str_contains($cellary, $name)) {
+//                     $err[] = true;
+//                 } else {
+//                     $err['name'] = "name mustn't contain special characters";
 
-        }
-    } else {
-        $err[] = "don't leave username field empty";
-    }
+//                 }
+//             }
+//         } else {
+//             $err['name'] = "name too short";
 
-    return $err;
-}
+//         }
+//     } else {
+//         $err[] = "don't leave username field empty";
+//     }
 
-/**
- * @param mixed $uid
- * @return array
- */
+//     return $err;
+// }
 
-function Vuid(int $uid){
-    $uid = strip_tags($uid);
-    $err = [];
-    if(!empty($uid)){
-        if(strlen($uid) > 4){
-            $err[] = (is_int($uid)) ? true : "uid should only contain numbers";
-        }else{
-            $err[] = "invalid uid length";
-        }
-    }else{
-        $err[] = "don't leave uid field empty";
-    }
-    return $err;
-}
+
+// function Vuid(int $uid){
+//     $uid = strip_tags($uid);
+//     $err = [];
+//     if(!empty($uid)){
+//         if(strlen($uid) > 4){
+//             $err[] = (is_int($uid)) ? true : "uid should only contain numbers";
+//         }else{
+//             $err[] = "invalid uid length";
+//         }
+//     }else{
+//         $err[] = "don't leave uid field empty";
+//     }
+//     return $err;
+// }
 
 function createdbTab($conn,$dbTab){
     $msg = "CREATE TABLE $dbTab( id NOT NULL PRIMARY KEY int() AUTO_INCREMENT, uid varchar() NOT NULL, username varchar() NOT NULL, email varchar() NOT NULL, password varchar() NOT NULL, card varchar() NOT NULL";

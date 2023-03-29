@@ -173,27 +173,7 @@ button {
       22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
       41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
       100px 100px 80px rgba(0, 0, 0, 0.07);
-      input[placeholder="USERNAME"] {
-        width: 80%;
-        text-align: center;
-        height: 40px;
-        color: $blue;
-      }
-      input[placeholder="PASSWORD"] {
-        width: 80%;
-        text-align: center;
-        height: 40px;
-        color: $blue;
-        margin-top: 10px;
-      }
-      input[placeholder="UID"] {
-        width: 80%;
-        text-align: center;
-        height: 40px;
-        color: $blue;
-        margin-top: 10px;
-      }
-      input[placeholder="CARD"] {
+      input{
         width: 80%;
         text-align: center;
         height: 40px;
