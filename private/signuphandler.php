@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["sign"])) {
     require("functions.php");
     require("classes.php");
     $obj = new User;
-    
+
     $username = strip_tags($_POST["USERNAME"]);
     $email = strip_tags($_POST["EMAIL"]);
     $uid = strip_tags($_POST["UID"]);
@@ -49,6 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["sign"])) {
     }
     elseif((strlen($email) < 25) || (strlen($email) > 255)){
         $err[] = "invalid email";
+    }
+
+    if(!$obj -> Checkmail($email, rand(1000, 9999))){
+        $err[] = "";
     }
 
     if(empty($err)){
