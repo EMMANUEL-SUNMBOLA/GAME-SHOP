@@ -5,18 +5,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["sign"])) {
     $prob = [];
     require("db.php");
     require("functions.php");
+    require("classes.php");
+    $obj = new User;
+    
     $username = strip_tags($_POST["USERNAME"]);
     $email = strip_tags($_POST["EMAIL"]);
     $uid = strip_tags($_POST["UID"]);
     $password = strip_tags($_POST["PASSWORD"]);
     $password2 = strip_tags($_POST["PASSWORD2"]);
     $card = strip_tags($_POST["CARD"]);
-    /**
-     * i feel we shouldn't strip the tags from the password variable
-     * cos to make the password hard to crack one might add tags
-     * but with/without the striptags the output would still be the same everytime LOL 😅
-     * coding and wahala 
-     */
 
     if (empty($username)) {
         $err[] = "please fill username";
@@ -55,12 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["sign"])) {
     }
 
     if(empty($err)){
-    //   $prob[] =  insertdbTab($conn,$dbTab,$uid,$username,$email,$password,$card) ? "account 
-    //   created
-    //  successfully" : "something went wrong while creating account, seek admin help";
-    $prob[] = "no errors";
+        $prob[] = 
+        ($obj -> Createuser($conn, $dbtab, $uid, $username, $email, $password, $card)) ? 
+        "account created succcessfuly" : "something went wrong";
+        // $prob[] = "no errors";
     }
 } else {
-    // header("Location:../public/404.php");
     $err[] = "Something went wrong";
 }
